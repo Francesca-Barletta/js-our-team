@@ -30,19 +30,19 @@ Barbara Ramos	Graphic Designer	    barbara-ramos-graphic-designer.jpg*/
 //con la funzione creo gli oggetti che mi servono 
 //pusho gli oggetti nell'array
 
-function createObject(memberName, memberRole, memberPicture){
+function createObject(memberName, memberRole, memberPicture) {
     const persona = {
         name: memberName,
         role: memberRole,
-        photo:memberPicture
+        photo: memberPicture
     }
     return persona
 }
 
 const ourTeam = [];
 
-const wayne = createObject('Wayne Barret', 'Founder & CEO', 'angela-caroll-chief-editor.jpg');
-const angelaC = createObject('Angela Caroll', 'Chief Editor', 'angela-lopez-social-media-manager.jpg');
+const wayne = createObject('Wayne Barret', 'Founder & CEO', 'wayne-barnett-founder-ceo.jpg');
+const angelaC = createObject('Angela Caroll', 'Chief Editor', 'angela-caroll-chief-editor.jpg');
 const walter = createObject('Walter Gordon', 'Office Manager', 'walter-gordon-office-manager.jpg');
 const angelaL = createObject('Angela Lopez', 'Social Media Manager', 'angela-lopez-social-media-manager.jpg');
 const scott = createObject('Scott Estrada', 'Developer', 'scott-estrada-developer.jpg');
@@ -53,14 +53,22 @@ console.log(ourTeam);
 
 //creo un elemento sul dom paragrafo
 
-const divElement = document.getElementById('main')
+const divElement = document.getElementById('main');
 //posso ciclare l'array ourTem con e dirgli che per ogni oggetto 
 //deve mettere nel dom la stringa con le informazioni
-for(let i = 0; i < ourTeam.length; i++){
+for (let i = 0; i < ourTeam.length; i++) {
     const personaString = document.createElement('div');
+    personaString.className = 'col-3';
     const singlePerson = ourTeam[i];
     console.log(singlePerson);
-    personaString.innerHTML = `<div><p>${singlePerson.name} - ${singlePerson.role}</p><img src="./img/${singlePerson.photo}" alt=""></div>`;
+    personaString.innerHTML =
+    `<div class ="card">
+            <img src="./img/${singlePerson.photo}" alt="">
+            <div class="card-info">
+                <h3>${singlePerson.name}</h3>  
+                <p>${singlePerson.role}</p>
+            </div>
+    </div>`;
     console.log(personaString);
     divElement.append(personaString);
 
