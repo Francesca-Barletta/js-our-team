@@ -18,19 +18,18 @@ img{
     max-width: 800px;
     margin: 20px auto;
 }
+.card-info{
+    padding: 20px 0;
+}
 .col-3{
     max-width: calc(100% / 3);
 }
-p{
-    color: grey;
-    margin: 10px;
-}
+
 .card{
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     margin: 10px;
 }
