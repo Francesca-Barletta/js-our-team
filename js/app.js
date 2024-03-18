@@ -9,9 +9,9 @@ Creare l’array di oggetti con le informazioni fornite.
 okMILESTONE 1:
 Stampare su console, per ogni membro del team, le informazioni di nome, 
 ruolo e la stringa della foto
-MILESTONE 2:
+okMILESTONE 2:
 Stampare le stesse informazioni su DOM semplicemente come stringhe
-BONUS 1:
+okBONUS 1:
 Trasformare la stringa foto in una immagine effettiva
 BONUS 2:
 Organizzare i singoli membri in card/schede
@@ -32,7 +32,7 @@ Barbara Ramos	Graphic Designer	    barbara-ramos-graphic-designer.jpg*/
 
 function createObject(memberName, memberRole, memberPicture){
     const persona = {
-        nome: memberName,
+        name: memberName,
         role: memberRole,
         photo:memberPicture
     }
@@ -52,14 +52,15 @@ ourTeam.push(wayne, angelaC, walter, angelaL, scott, barbara);
 console.log(ourTeam);
 
 //creo un elemento sul dom paragrafo
-const personaString = document.createElement('p');
+
 const divElement = document.getElementById('main')
 //posso ciclare l'array ourTem con e dirgli che per ogni oggetto 
 //deve mettere nel dom la stringa con le informazioni
 for(let i = 0; i < ourTeam.length; i++){
+    const personaString = document.createElement('div');
     const singlePerson = ourTeam[i];
     console.log(singlePerson);
-    personaString.innerHTML = `${toString(singlePerson)}`;
+    personaString.innerHTML = `<div><p>${singlePerson.name} - ${singlePerson.role}</p><img src="./img/${singlePerson.photo}" alt=""></div>`;
     console.log(personaString);
     divElement.append(personaString);
 
