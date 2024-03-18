@@ -59,7 +59,7 @@ const divElement = document.getElementById('main')
 for(let i = 0; i < ourTeam.length; i++){
     const singlePerson = ourTeam[i];
     console.log(singlePerson);
-    personaString.innerHTML = `${singlePerson}`;
+    personaString.innerHTML = `${toString(singlePerson)}`;
     console.log(personaString);
     divElement.append(personaString);
 
