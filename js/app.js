@@ -57,9 +57,16 @@ const divElement = document.getElementById('main');
 //posso ciclare l'array ourTem con e dirgli che per ogni oggetto 
 //deve mettere nel dom la stringa con le informazioni
 for (let i = 0; i < ourTeam.length; i++) {
+    const singlePerson = ourTeam[i];
+    const namePerson = singlePerson.name;
+  
+    const rolePerson = singlePerson.role;
+    
+    const photoPerson = singlePerson.photo;
+    console.log(namePerson, rolePerson, photoPerson);
     const personaString = document.createElement('div');
     personaString.className = 'col-3';
-    const singlePerson = ourTeam[i];
+    
     console.log(singlePerson);
     personaString.innerHTML =
     `<div class ="card">
